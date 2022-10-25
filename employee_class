@@ -1,0 +1,102 @@
+import java.util.*;
+class Employee
+{
+	String name;
+	long ph;
+	int age;
+	String address;
+	int salary;
+	Employee(String name,long ph,int age,String address,int salary)
+	{
+	this.name=name;
+	this.ph=ph;
+	this.age=age;
+	this.address=address;
+	this.salary=salary;
+	}
+	void printsalary()
+	{
+		System.out.println("Salary: "+salary);
+	}
+}
+
+class Officer extends Employee
+{
+	String specialization;
+	Officer(String name,long ph,int age,String address,int salary,String specialization)
+	{
+	super(name,ph,age,address,salary);
+	this.specialization=specialization;
+	}
+	void printp1()
+	{
+		System.out.println("Name: "+name);
+		System.out.println("Phone: "+ph);
+		System.out.println("Age: "+age);
+		System.out.println("Address: "+address);
+		System.out.println("Salary: "+salary);
+		System.out.println("Specialization: "+specialization);
+	}
+}
+
+class Manager extends Employee
+{
+	String department;
+	Manager(String name,long ph,int age,String address,int salary,String department)
+	{
+	super(name,ph,age,address,salary);
+	this.department=department;
+	}
+	void printp2()
+	{
+		System.out.println("Name: "+name);
+		System.out.println("Phone: "+ph);
+		System.out.println("Age: "+age);
+		System.out.println("Address: "+address);
+		System.out.println("Salary: "+salary);
+		System.out.println("Department: "+department);
+	}
+}
+
+class A
+{
+	public static void main(String args[])
+	{
+		String name;
+		int age;
+		long ph;
+		String address;
+		int salary;
+		String specialization;
+		String department;
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter the name of the Officer: ");
+		name=input.nextLine();
+		System.out.println("Enter the phone number: ");
+		ph=input.nextLong();
+		System.out.println("Enter the age : ");
+		age=input.nextInt();
+		System.out.println("Enter the address: ");
+		address=input.nextLine();
+		System.out.println("Enter the salary: ");
+		salary=input.nextInt();
+		System.out.println("Enter the specialization: ");
+		specialization=input.nextLine();
+		Officer off=new Officer(name,ph,age,address,salary,specialization);
+		off.printp1();
+		System.out.println("Enter the name of the Manager: ");
+		name=input.nextLine();
+		System.out.println("Enter the phone number: ");
+		ph=input.nextLong();
+		System.out.println("Enter the age : ");
+		age=input.nextInt();
+		System.out.println("Enter the address: ");
+		address=input.nextLine();
+		System.out.println("Enter the salary: ");
+		salary=input.nextInt();
+		System.out.println("Enter the department: ");
+		department=input.nextLine();
+		Manager man=new Manager(name,ph,age,address,salary,department);
+		man.printp2();
+	}
+}
