@@ -1,0 +1,86 @@
+import java.util.*;
+class Employee{
+	String name;
+	int ph;
+	int age;
+	String address;
+	int salary;
+	Employee(String name,int ph,int age,String address,int salary){
+		this.name=name;
+		this.ph=ph;
+		this.age=age;
+		this.address=address;
+		this.salary=salary;}
+	void printsalary(){
+		System.out.print("\nSALARY:"+salary);}}
+class Officer extends Employee{
+	String specialization;
+	Officer(String name,int ph,int age,String address,int salary,String specialization){
+		super(name,ph,age,address,salary);
+		this.specialization=specialization;}
+	void printO(){
+		System.out.print("\nOFFICER:\n");
+		System.out.print("\nNAME:"+name);
+		System.out.print("\nAGE:"+age);
+		System.out.print("\nPHONE NUMBER:"+ph);
+		System.out.print("\nADDRESS:"+address);
+		printsalary();
+		System.out.print("\nSPECIALIZATION:"+specialization);}
+	}
+class Manager extends Employee{
+	String department;
+	Manager(String name,int ph,int age,String address,int salary,String department){
+		super(name,ph,age,address,salary);
+		this.department=department;}
+	void printM(){
+		System.out.print("\nMANAGER:\n");
+		System.out.print("\nNAME:"+name);
+		System.out.print("\nAGE:"+age);
+		System.out.print("\nPHONE NUMBER:"+ph);
+		System.out.print("\nADDRESS:"+address);
+		printsalary();
+		System.out.print("\nDEPARTMENT:"+department);}
+	}
+class A{
+	public static void main(String args[]){
+		String name;
+		int ph;
+		int age;
+		String address;
+		int salary;
+		String department;
+		String specialization;
+		Scanner input =new Scanner(System.in);
+		System.out.print("Enter name of Manager :");
+		name=input.nextLine();
+		System.out.print("Enter age of Manager:");
+		age=input.nextInt();
+		System.out.print("Enter phone number of Manager:");
+		ph=input.nextInt();
+		input.nextLine();
+		System.out.print("Enter address of Manager:");
+		address=input.nextLine();
+		System.out.print("Enter salary of Manager:");
+		salary=input.nextInt();
+		input.nextLine();
+		System.out.print("Enter specialization of Manager:");
+		specialization=input.nextLine();
+		System.out.print("Enter name of Officer:");
+		name=input.nextLine();
+		System.out.print("Enter age of Officer:");
+		age=input.nextInt();
+		System.out.print("Enter phone number of Officer:");
+		ph=input.nextInt();
+		input.nextLine();
+		System.out.print("Enter address of Officer:");
+		address=input.nextLine();
+		System.out.print("Enter salary of Officer:");
+		salary=input.nextInt();
+		input.nextLine();
+		System.out.print("Enter department of Officer:");
+		department=input.nextLine();
+		Manager man=new Manager(name,ph,age,address,salary,specialization);
+		man.printM();
+		Officer off=new Officer(name,ph,age,address,salary,department);
+		off.printO();
+		}}
