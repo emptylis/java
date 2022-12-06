@@ -1,0 +1,84 @@
+import java.util.*;
+class dlist{
+static LinkedList<Integer> list;
+
+	public static void main(String args[])
+	{
+		list= new LinkedList<Integer>();
+		Scanner sc=new Scanner(System.in);
+
+		while(true){
+
+			System.out.println("");
+			System.out.println("\t\t\t1 ADD ELEMENT");
+			System.out.println("\t\t\t2 DELETE FROM FRONT");
+			System.out.println("\t\t\t3 DELETE FROM END");
+		    	System.out.println("\t\t\t4 DELETE AT POSITION");
+		    	System.out.println("\t\t\t5 DISPLAY");
+		    	System.out.println("\t\t\t6 EXIT");
+		    	System.out.println("Enter Choice");
+		   	 int ch=sc.nextInt();
+			switch(ch)
+			{
+				case 1:
+					System.out.println("Enter Element");
+					int ele = sc.nextInt(); 
+					list.add(ele);
+					System.out.println ("Element Added");
+					display();
+					break;
+				case 2:
+					try{
+						list.removeFirst();
+						display();
+					}catch (NoSuchElementException e){
+						System.out.println("List is Empty");
+					}
+					break;
+				case 3:try{
+						list.removeLast();
+						display();
+					}catch (NoSuchElementException e){
+						System.out.println("List is Empty");
+					}
+						break;
+				case 4:
+					System.out.println("Enter position");
+			        int pos=sc.nextInt();
+			        try{
+			        	list.remove(pos-1);
+			        	display();
+			        }catch(IndexOutOfBoundsException e){
+			        	System.out.println("Enter a valid position");
+			        }
+					
+			    
+			        break;
+			 	case 5:
+			 		display();
+			 		
+			    	break;
+			    case 6:
+			    	System.exit(0);
+			    	break;
+				default:System.out.println("Invalid choice");
+		    }
+		}
+   } 
+   public static void display()
+			{
+   					if(list.size()==0)
+						{
+			 				System.out.println("List is empty");
+			 			}
+						else
+						{
+			 				Iterator<Integer>itr=list.iterator();
+			 				System.out.println("List Elements are:");
+			 				while(itr.hasNext())
+							{
+			    					System.out.print(itr.next()+"	");
+			    				}
+			 			} 
+   			}
+}
